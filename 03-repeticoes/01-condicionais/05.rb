@@ -1,21 +1,22 @@
 puts("Digite um numero: ")
 num = gets.chomp.to_i
-sum = 0
+total_sum = 0
 
 until num == 0
     x = num
-    add = 0
+    sum = 0
     i = 0
+    puts("#{num} é ímpar. Será somado a 1 para se tornar par") if num.odd?
     x = num.even? ? x : num + 1
     while i < 5
-        add += x
+        sum += x
         x += 2
         puts("O #{i + 1 }º numero par consecutivo é: #{x}")
         i += 1
     end
-    sum += add
-    puts("A soma dos 5 numeros pares consecutivos de #{num.odd? ? num + 1 : num} foi #{add}")
-    puts("O total da soma é #{sum}")
+    total_sum += sum
+    puts("A soma dos 5 numeros pares consecutivos de #{num.odd? ? num + 1 : num} foi #{sum}")
+    puts("O total da soma é #{total_sum}")
     num = gets.chomp.to_i
 end
 
